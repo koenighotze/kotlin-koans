@@ -21,7 +21,20 @@ fun todoTask4(collection: Collection<Int>): Nothing = TODO(
     documentation = doc4(),
     references = { JavaCode4().task4(collection) })
 
-fun task4(collection: Collection<Int>): Boolean = todoTask4(collection)
+
+/*
+public boolean task4(Collection<Integer> collection) {
+        return Iterables.any(collection, new Predicate<Integer>() {
+            @Override
+            public boolean apply(Integer element) {
+                return element % 42 == 0;
+            }
+        });
+    }
+ */
+fun task4(collection: Collection<Int>): Boolean {
+    return collection.any { it % 42 == 0 }
+}
 
 
 
